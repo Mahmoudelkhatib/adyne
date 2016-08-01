@@ -3,9 +3,10 @@ var Schema = mongoose.Schema;
 var Meeting = new Schema({
     title:String,
     subject:String,
-    description:String,
-    start:Date ,
-    duration:Number,
+    adress:String,
+    start:String ,
+    type : String,
+    duration:String,
     created:Date ,
     user: {
         type: Schema.ObjectId,

@@ -33,6 +33,7 @@ router.post  ('/', function (req, res) {
         title : req.body.title ,
         subject : req.body.subject ,
         description : req.body.description,
+        adress : req.body.adress, 
         start : req.body.start,
         duration : req.body.duration,
         user : req.body.user,
