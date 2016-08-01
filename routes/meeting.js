@@ -33,9 +33,15 @@ router.post  ('/', function (req, res) {
         title : req.body.title ,
         subject : req.body.subject ,
         description : req.body.description,
-        adress : req.body.adress, 
-        start : req.body.start,
-        duration : req.body.duration,
+        adress : req.body.adress,
+        date : req.body.date,
+        heure : req.body.heure,
+        date1 : req.body.date1,
+        heure1 : req.body.heure1,
+        date2 : req.body.date2,
+        heure2 : req.body.heure2,
+        date3 : req.body.date3,
+        heure3 : req.body.heure3,
         user : req.body.user,
         created : new Date()
 
