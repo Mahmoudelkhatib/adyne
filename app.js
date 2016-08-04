@@ -57,6 +57,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // mongoose
-
-mongoose.connect('mongodb://adyne:adyne@ds029705.mlab.com:29705/adyne');
+//mongodb://localhost/meanAuth
+mongodb://adyne:adyne@ds029705.mlab.com:29705/adyne
+mongoose.connect('mongodb://127.0.0.1/adyne');
 module.exports = app;

@@ -18,6 +18,7 @@ var validateLocalStrategyEmail = function (email) {
 };
 var User = new Schema({
 
+
     username: {
         type: String,
         unique: 'Username already exists',
@@ -40,7 +41,7 @@ var User = new Schema({
     roles: {
         type: [{
             type: String,
-            enum: ['admin', 'Organisation' , 'Member']
+            enum: ['admin', 'Organisation' , 'Member' ,'sub_admin']
         }],
         default: ['Member'],
         required: 'Please provide at least one role'
@@ -48,7 +49,8 @@ var User = new Schema({
     created: {
         type: Date,
         default: Date.now
-    }
+    },
+    avatar : String
 
 });
 

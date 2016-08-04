@@ -41,6 +41,27 @@ router.get('/logout', function (req, res) {
 router.get('/ping', function (req, res) {
     res.status(200).send("test!");
 });
+
+router.get("/sub_admin", function(req, res){
+var sub_admin = [];
+User.find().exec(function(error, result){
+  if(error)
+  {
+    res.send(error);
+  }
+  else
+  {
+    for (var i = 0; i < result.length; i++) {
+    if (result[i].roles[0]==="sub_admin")
+    {
+      sub_admin.push(result[i]);
+    }
+    }
+    res.send(sub_admin)
+  }
+})
+
+})
 //end passport route >>
 
 module.exports = router;
