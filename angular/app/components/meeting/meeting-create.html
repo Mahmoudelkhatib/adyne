@@ -1,0 +1,114 @@
+<div id="page_content">
+    <div id="page_content_inner">
+
+        
+
+        <div class="md-card">
+            <div class="md-card-content large-padding">
+            <h3 class="heading_b uk-margin-bottom">New Meeting</h3>
+                <form id="form_validation" class="uk-form-stacked" ng-submit="submit()">
+                    <div class="uk-grid" data-uk-grid-margin>
+                        <div class="uk-width-medium-1-2">
+                            <div class="parsley-row">
+                                  <label>Title</label>
+                                <input id="title" type="text" name="title" data-parsley-trigger="change" required  class="md-input" md-input />
+                            </div>
+                        </div>
+                        <div class="uk-width-medium-1-2">
+                            <div class="parsley-row">
+                                 
+                                <input id="adress" type="text" name="adress" data-parsley-trigger="change" required  class="md-input" md-input />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-grid" data-uk-grid-margin>
+                        <div class="uk-width-medium-1-2">
+                            <div class="parsley-row">
+                               <label>Members</label>
+                            <selectize id="selec_adv_1" name="membres" config="selectize_planets_config" options="selectize_planets_options" position="bottom" ng-model="forms_advanced.selectize_planets"></selectize>
+                           <input type="text" value="{{forms_advanced.selectize_planets}}" id="members" name="members" hidden required/>      
+                            </div>
+                        </div>
+                        <div class="uk-width-medium-1-2">
+                            <div class="parsley-row">
+                                
+                                <label class="uk-form-label">Type</label>
+                                 <input type="text" name="type" id="type" config="selectize_a_config" required options="selectize_a_data.options" ng-model="selectize_a" name="selectize_a" selectize ng-show="show()" />
+                                <input type="text" value="{{selectize_a}}" id="result" hidden="true"  >
+                            </div>
+                        </div>
+                    </div>
+                   
+                 
+            <div id="1" style="visibility: hidden">
+                       <div class="uk-grid" data-uk-grid-margin>
+                        
+                        <div class="uk-width-medium-1-3">
+                       <label for="uk_dp_1">Select date</label>
+                                    <input name="date0" id="date0" class="md-input" type="text" id="date0" data-uk-datepicker="{format:'YYYY-MM-DD'}" md-input ng-model="forms_advanced.datepicker0">
+                    </div>
+                    <div class="uk-width-medium-1-3">
+                        <label for="uk_tp_1">Select time</label>
+                                    <input class="md-input" type="text" id="time0" name="time0" data-uk-timepicker md-input ng-model="forms_advanced.timepicker0">
+                    </div>
+                    
+                    </div>
+                </div>
+                    <div id="2" style="visibility: hidden">
+                    <div class="uk-grid" data-uk-grid-margin>
+                        
+                        <div class="uk-width-medium-1-3">
+                       <label for="uk_dp_1">Select date</label>
+                                    <input class="md-input" type="text" id="date1" name="date1" data-uk-datepicker="{format:'YYYY-MM-DD'}" md-input ng-model="forms_advanced.datepicker1">
+                    </div>
+                    <div class="uk-width-medium-1-3">
+                        <label for="uk_tp_1">Select time</label>
+                                    <input class="md-input" type="text" name="time1" id="time1" data-uk-timepicker md-input ng-model="forms_advanced.timepicker1">
+                    </div>
+                    
+                    </div>
+                    <div class="uk-grid" data-uk-grid-margin>
+                        
+                        <div class="uk-width-medium-1-3">
+                       <label for="uk_dp_1">Select date</label>
+                                    <input class="md-input" type="text" name="date2" id="date2" data-uk-datepicker="{format:'YYYY-MM-DD'}" md-input ng-model="forms_advanced.datepicker2">
+                    </div>
+                    <div class="uk-width-medium-1-3">
+                        <label for="uk_tp_1">Select time</label>
+                                    <input class="md-input" type="text" id="time2" name="time2" data-uk-timepicker md-input ng-model="forms_advanced.timepicker2">
+                    </div>
+                    
+                    </div>
+                    <div class="uk-grid" data-uk-grid-margin>
+                        
+                       <div class="uk-width-medium-1-3">
+                       <label for="uk_dp_1">Select date</label>
+                                    <input class="md-input" type="text" id="date3"  name ="date3" data-uk-datepicker="{format:'YYYY-MM-DD'}" md-input ng-model="forms_advanced.datepicker3">
+                    </div>
+                    <div class="uk-width-medium-1-3">
+                        <label for="uk_tp_1">Select time</label>
+                                    <input class="md-input" type="text" id="time3" name="time3" data-uk-timepicker md-input ng-model="forms_advanced.timepicker3">
+                    </div>
+                    
+                    </div>
+                    </div>
+                    <div class="uk-grid">
+                        <div class="uk-width-1-1">
+                           
+                                <label for="message">Subject</label>
+                                 <textarea id="subject" name ="subject" required ui-tinymce="tinymce_options" ng-model="tinymce_content" cols="30" rows="24"></textarea>
+                           
+                        </div>
+                    </div>
+       
+                    <div class="uk-grid">
+                        <div class="uk-width-1-1">
+                            <button type="submit" class="md-btn md-btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

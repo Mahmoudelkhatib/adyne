@@ -1,0 +1,142 @@
+    <div id="page_content">
+        <div id="page_content_inner">
+            
+     
+         
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="md-card">
+                
+                
+                
+                
+                
+                <div class="md-card-content" >
+                    
+                    
+                    
+                    <div   ui-calendar="uiConfig.calendar"  ng-model="eventSources" calendar="myCalendar" ng-cloak></div>
+                
+                    
+               
+                    
+                     
+      
+            </div>
+
+                                 
+            
+   
+                    
+                    
+         
+
+     
+            
+            </div>
+
+            
+            
+                        <div class="md-card">
+                <div class="md-card-content">
+                    <h4 class="heading_a uk-margin-bottom">Tabletools</h4>
+        <div class="md-card uk-margin-medium-bottom">
+            <div class="md-card-content" >
+                 <table datatable="ng" dt-options="dtOptions"  dt-instance="dtInstance" class="uk-table" cellspacing="0" width="100%">
+                     <thead>
+                      
+                        <tr>
+                            <th>Title</th>
+                            <th>Adress</th>
+                            <th>Type</th>
+                            <th>participants Number</th>
+                            <th></th> 
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Title</th>
+                            <th>Adress</th>
+                            <th>Type</th>
+                            <th>Participant Number</th>
+                         <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="row in dt_data">
+                            <td>{{row.title}}</td>
+                            <td>{{row.adress}}</td>
+                            <td>{{row.type}}</td>
+                            <td><a data-uk-modal="{target:'#modal_large'}" ng-click="get(row._id)" message="Meeting deleted" status="success" position="bottom-center" uk-notification="">{{row.participants.length}}</a></td>
+                            <td class="uk-text-center">
+                                    <a  ng-click="delete(row._id)" message="Meeting deleted" status="success" position="bottom-center" uk-notification=""><i class="md-icon material-icons md-24">&#xE872;</i></a>
+                                <div class="uk-modal" id="modal_header_footer">
+                                
+                                </div>
+                                
+                                <a href="#/meeting-edit/{{row._id}}"><i class="md-icon material-icons">&#xE254;</i></a>
+                                    <a href="#"><i class="md-icon material-icons">&#xE88F;</i></a>
+                                </td>
+                            
+                        </tr>
+                    </tbody>
+              </table>
+             
+                 
+                    
+                    
+                    
+                    
+                </div>
+            
+     
+            
+            </div>
+                    
+                    </div>
+
+        </div>
+                         
+        </div>
+    </div>
+
+
+                                                     <div class="md-fab-wrapper">
+    <button class="md-fab md-fab-accent" ng-click ="create()">
+        <i class="material-icons">&#xE145;</i>
+   
+                                   
+  
+                          </button>
+                    
+                    
+                    
+                   
+                      
+                    
+</div>
+
+<div class="uk-modal" id="modal_large">
+                                <div class="uk-modal-dialog uk-modal-dialog-large">
+                                    <button type="button" class="uk-modal-close uk-close"></button>
+                        <div class="uk-grid uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-5" data-uk-grid-margin dragula='"first-dragula"' dragula-model='dragulaItems'>
+                <div ng-repeat="item in dragulaItems">
+                    <div class="md-card">
+                        <div class="md-card-head head_background" style="background-image: url({{item.background_image}})"></div>
+                        <div class="md-card-content">{{item.description}}</div>
+                    </div>
+                </div>
+            </div>
+                                </div>
+                            </div>
+
+
+

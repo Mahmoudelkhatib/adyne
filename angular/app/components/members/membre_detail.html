@@ -1,0 +1,219 @@
+    <div id="page_content">
+        <div id="page_content_inner">
+            <div class="uk-grid" data-uk-grid-margin data-uk-grid-match id="user_profile">
+                <div class="uk-width-large-7-10">
+                    <div class="md-card">
+                        <div class="user_heading">
+                            
+                            <div class="user_heading_avatar">
+                                <img ng-src="http://localhost/adyne/angular/assets/img/avatars/{{user.avatar}}" />
+                            </div>
+                            <div class="user_heading_content">
+                                <h2 class="heading_b uk-margin-bottom">
+                                    <span class="uk-text-truncate">{{user.lastName +" " +user.firstName}}</span>
+                                    <span class="sub-heading">{{user.roles[0]}}</span>
+                                </h2>
+                               
+                            </div>
+                            <a class="md-fab md-fab-small md-fab-accent" data-uk-modal="{target:'#modal_large'}">
+                                <i class="material-icons">&#xE0BE;</i>
+                            </a>
+                        </div>
+                        <div class="user_content">
+                            <ul id="user_profile_tabs" class="uk-tab" data-uk-tab="{connect:'#user_profile_tabs_content', animation:'slide-horizontal'}" data-uk-sticky="{ top: 48, media: 960 }">
+                                <li class="uk-active"><a href="#">About</a></li>
+                                
+                            </ul>
+                            <ul id="user_profile_tabs_content" class="uk-switcher uk-margin">
+                                <li>
+                                    {{user.description}}
+                                    <div class="uk-grid uk-margin-medium-top uk-margin-large-bottom" data-uk-grid-margin>
+                                        
+                                                           <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">General Information</h4>
+                                            <ul class="md-list">
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.lastName}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Last Name</span>
+                                                    </div>
+                                                </li>
+                                                
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.firstName}}</span>
+                                                        <span class="uk-text-small uk-text-muted">First Name</span>
+                                                    </div>
+                                                </li>
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.company}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Compaany</span>
+                                                    </div>
+                                                </li>
+                                                <li >
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.adress}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Adress</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="uk-width-large-1-2">
+                                            <h4 class="heading_c uk-margin-small-bottom">Contact Info</h4>
+                                            <ul class="md-list md-list-addon">
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.Email}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Email</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading">{{user.phone}}</span>
+                                                        <span class="uk-text-small uk-text-muted">Phone</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-facebook-official"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="{{user.facebook}}">{{user.facebook}}</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Facebook</span>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="md-list-addon-element">
+                                                        <i class="md-list-addon-icon uk-icon-twitter"></i>
+                                                    </div>
+                                                    <div class="md-list-content">
+                                                        <span class="md-list-heading"><a href="{{user.twitter}}">{{user.twitter}}</a></span>
+                                                        <span class="uk-text-small uk-text-muted">Twitter</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                     
+                                    </div>
+                                   <!--
+                                    <h4 class="heading_c uk-margin-bottom">Timeline</h4>
+                                   
+                                    <div class="timeline">
+                                        <div class="timeline_item" ng-repeat="event in user_data.timeline">
+                                            <div class="timeline_icon timeline_icon_danger" ng-if="event.status == 'danger'"><i class="material-icons" ng-bind-html="event.icon"></i></div>
+                                            <div class="timeline_icon timeline_icon_success" ng-if="event.status == 'success'"><i class="material-icons" ng-bind-html="event.icon"></i></div>
+                                            <div class="timeline_icon timeline_icon_warning" ng-if="event.status == 'warning'"><i class="material-icons" ng-bind-html="event.icon"></i></div>
+                                            <div class="timeline_icon timeline_icon_primary" ng-if="event.status == 'primary'"><i class="material-icons" ng-bind-html="event.icon"></i></div>
+                                            <div class="timeline_icon" ng-if="!event.status"><i class="material-icons" ng-bind-html="event.icon"></i></div>
+                                            <div class="timeline_date">
+                                                {{ event.date | jsonDate | date: 'dd' }}
+                                                <span>{{ event.date | jsonDate |date: 'MMM' }}</span>
+                                            </div>
+                                            <div class="timeline_content">
+                                                {{event.description}} <a href="#" ng-if="event.link_text"><strong>{{event.link_text}}</strong></a>
+                                                <div class="timeline_content_addon" ng-if="event.image || event.post_excerpt || event.user_name">
+                                                    <img ng-src="{{event.image}}" alt="" ng-if="event.image"/>
+                                                    <blockquote ng-if="event.post_excerpt">
+                                                        {{event.post_excerpt}}&hellip;
+                                                    </blockquote>
+                                                    <ul class="md-list md-list-addon" ng-if="event.user_name">
+                                                        <li>
+                                                            <div class="md-list-addon-element" ng-if="event.user_avatar">
+                                                                <img class="md-user-image md-list-addon-avatar" ng-src="{{event.user_avatar}}" alt=""/>
+                                                            </div>
+                                                            <div class="md-list-content">
+                                                                <span class="md-list-heading" ng-if="event.user_name">{{event.user_name}}</span>
+                                                                <span class="uk-text-small uk-text-muted" ng-if="event.user_status">{{event.user_status}}</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+-->
+                                </li>
+                                <li>
+                                    <div id="user_profile_gallery" data-uk-check-display class="uk-grid-width-small-1-2 uk-grid-width-medium-1-3 uk-grid-width-large-1-4" data-uk-grid="{gutter: 4}">
+                                        <div ng-repeat="image in user_data.images">
+                                            <a href="{{image}}" data-uk-lightbox="{group:'user_images'}">
+                                                <img ng-src="{{image}}" alt=""/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <ul class="uk-pagination uk-margin-large-top">
+                                        <li class="uk-disabled"><span><i class="uk-icon-angle-double-left"></i></span></li>
+                                        <li class="uk-active"><span>1</span></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><span>&hellip;</span></li>
+                                        <li><a href="#">20</a></li>
+                                        <li><a href="#"><i class="uk-icon-angle-double-right"></i></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="md-list">
+                                        <li ng-repeat="post in user_data.posts">
+                                            <div class="md-list-content">
+                                                <span class="md-list-heading"><a href="#">{{post.title}}</a></span>
+                                                <div class="uk-margin-small-top">
+                                                    <span class="uk-margin-right">
+                                                        <i class="material-icons">&#xE192;</i> <span class="uk-text-muted uk-text-small">{{post.date}}</span>
+                                                    </span>
+                                                    <span class="uk-margin-right">
+                                                        <i class="material-icons">&#xE0B9;</i> <span class="uk-text-muted uk-text-small">{{post.comments}}</span>
+                                                    </span>
+                                                    <span class="uk-margin-right">
+                                                        <i class="material-icons">&#xE417;</i> <span class="uk-text-muted uk-text-small">{{post.views}}</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+<!--- ModalView --->
+
+<div class="uk-modal" id="modal_large">
+                                <div class="uk-modal-dialog uk-modal-dialog-large">
+                                    <button type="button" class="uk-modal-close uk-close"></button>
+                                    <div class="uk-width-medium-1-1 parsley-row">
+                                    <label for="wizard_fullname">Email<span class="req">*</span></label>
+                                    <input type="text" id="email" name="wizard_fullname" value="" id="wizard_fullname" required class="md-input"  md-input ng-model="user.Email" disabled />
+                                    </div>
+                                    <br> 
+                                    <br> 
+                                     <div class="uk-width-medium-1-1 parsley-row">
+                                    <label for="wizard_fullname">Subject<span class="req">*</span></label>
+                                    <input type="text" id="subject" name="wizard_fullname" value="" id="wizard_fullname" required class="md-input"  md-input ng-model="user.subject"  />
+                                    </div>
+                                    <br>
+                                    <div class="uk-width-medium-1-1 parsley-row">
+                                    <label for="wizard_fullname">Body<span class="req">*</span></label>
+                                    <textarea id="body" class="md-input" name="message" cols="10" rows="8" md-input ng-model="validation_form.message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message = "Come on! You need to enter at least a 20 caracters long comment.."></textarea>
+                                </div>
+                                   
+        <div class="uk-modal-footer uk-text-right">
+                                        <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button><button type="button" class="md-btn md-btn-flat md-btn-flat-primary" ng-click="send()">Send</button>
+                                    </div>                                 
+                            </div>
+   
+                                </div>
+                            

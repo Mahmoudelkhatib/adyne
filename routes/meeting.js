@@ -2,6 +2,7 @@ var express = require('express');
 var passport = require('passport');
 
 var Meeting = require('../models/meeting');
+var nodemailer = require('nodemailer');
 var router = express.Router();
 
 
@@ -14,6 +15,7 @@ Meeting.find({}).populate("participants").exec(function(err, result){
 })
 
 })
+
 
 router.get("/calendar", function(req, res){
    calendar_model = []

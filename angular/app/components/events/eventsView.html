@@ -1,0 +1,123 @@
+    <div id="page_content">
+        <div id="page_content_inner" ng-controller ="eventCtrl as Ctrl">
+            
+     
+         
+            
+            
+            
+            
+            
+            
+            
+    
+            
+            
+            <div class="md-card">
+                
+                
+                
+                
+                
+                <div class="md-card-content" >
+                    
+                    
+                    
+                    <div   ui-calendar="uiConfig.calendar"  ng-model="eventSources" calendar="myCalendar" ng-cloak></div>
+                
+                    
+               
+                    
+                     
+      
+            </div>
+
+                                 
+            
+   
+                    
+                    
+         
+
+     
+            
+            </div>
+
+                        
+                    
+        <div class="md-card uk-margin-medium-bottom">
+            <div class="md-card-content">
+                <table datatable="ng" dt-options="dtOptions" dt-instance="dtInstance" dt-column-defs="dtColumnDefs" class="uk-table" cellspacing="0" width="100%">
+                    <thead>
+                      
+                        <tr>
+                             <th>Title</th>
+                           <th> Creation Date</th>
+                            <th>Adress</th>
+                          
+                            <th>Start Date</th>
+                            
+                            <th>End Date</th>
+                           <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                           <th>Title</th>
+                           <th> Creation Date</th>
+                            <th>Adress</th>
+                          
+                            <th>Start Date</th>
+                            
+                            <th>End Date</th>
+                           <th>Action</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr ng-repeat="row in dt_data">
+                            <td>{{row.title}}</td>
+                            <td>{{row.created | date: "yyyy-MM-dd"}}</td>
+                            <td>{{row.adress}}</td>
+                            <td>{{row.start_date + "  " + row.start_time}}</td>
+                            <td>{{row.end_date +"  " + row.start_time }}</td>
+                            
+                        <td class="uk-text-center">
+                                    <a  ng-click="delete(row._id)" message="Event deleted" status="success" position="bottom-center" uk-notification=""><i class="md-icon material-icons md-24">&#xE872;</i></a>
+                                
+                                
+                                <a href="#/event_edit/{{row._id}}"><i class="md-icon material-icons">&#xE254;</i></a>
+                                    <a href="#/event_detail/{{row._id}}"><i class="md-icon material-icons">&#xE88F;</i></a>
+                                </td>   
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+                                                     <div class="md-fab-wrapper">
+    <button class="md-fab md-fab-accent" ng-click ="create()">
+        <i class="material-icons">&#xE145;</i>
+   
+                                   
+  
+                          </button>
+                    
+                    
+                    
+                   
+                      
+                    
+</div>
+
+
+
+
+
+<!---
+
+  
+
+
+--->

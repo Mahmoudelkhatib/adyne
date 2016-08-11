@@ -41,7 +41,7 @@ var User = new Schema({
     roles: {
         type: [{
             type: String,
-            enum: ['admin', 'Organisation' , 'Member' ,'sub_admin']
+            enum: ['admin', 'Organisation' , 'Member' ,'sub_admin', "Contact", "Partner"]
         }],
         default: ['Member'],
         required: 'Please provide at least one role'
@@ -50,7 +50,53 @@ var User = new Schema({
         type: Date,
         default: Date.now
     },
-    avatar : String
+   avatar : {
+       type: String,
+       default: ''
+   },
+
+   Email : {
+       type: String,
+       default: ''
+   } ,
+   phone : {
+       type: String,
+       default: ''
+   } ,
+   description :{
+       type: String,
+       default: ''
+   } ,
+   adress :{
+       type: String,
+       default: ''
+   },
+   company :{
+       type: String,
+       default: ''
+   },
+   facebook :{
+       type: String,
+       default: ''
+   },
+   google :{
+       type: String,
+       default: ''
+   },
+   linkedin :{
+       type: String,
+       default: ''
+   },
+   twitter :{
+       type: String,
+       default: ''
+   },
+   status :{
+       type: String,
+       default: 'Active'
+   }
+
+
 
 });
 

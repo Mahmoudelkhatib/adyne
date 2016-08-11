@@ -1,0 +1,123 @@
+<div id="page_content">
+    <div id="page_content_inner">
+
+        <div class="md-card uk-margin-large-bottom" ng-controller="event_editCtrl as create">
+            <div class="md-card-content">
+                <form id="wizard_advanced_form" class="uk-form-stacked" ng-submit="submit()">
+                    <wizard on-finish="finishedWizard()" template="app/templates/wizard.tpl.html">
+                        <wz-step title="General Information" template="app/templates/wizard.step.tpl.html">
+                            <h2 class="heading_a">
+                                General Information
+                                <span class="sub-heading">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                            </h2>
+                            <hr class="md-hr"/>
+                            <div class="uk-grid">
+                                <div class="uk-width-medium-1-1 parsley-row">
+                                    <label for="wizard_fullname">Title<span class="req">*</span></label>
+                                    <input type="text" name ="title" name="wizard_fullname" id="wizard_fullname" required class="md-input"  md-input ng-model="title" />
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="uk-grid">
+                               
+                                <div class="uk-width-medium-1-1 parsley-row">
+                                    <label for="wizard_fullname">Adress<span class="req">*</span></label>
+                                    <input type="text" name ="adress" name="wizard_fullname" id="wizard_fullname" required class="md-input"  md-input ng-model="adress" />
+                                </div>
+                                
+                            </div>
+                            <div class="uk-grid">
+                               <div class="uk-width-medium-1-3 parsley-row">
+                                    <label for="wizard_birth">Start Date<span class="req">*</span></label>
+                                    <input type="text" name="start_date" id="wizard_birth" required class="md-input" data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (MM.DD.YYYY)" data-uk-datepicker="{format:'YYYY-MM-DD'}" md-input ng-model="start_date"/>
+                                </div>
+                                <div class="uk-width-medium-1-3 parsley-row">
+                                    <label for="wizard_birth_place">Start Time<span class="req">*</span></label>
+                                    <input class="md-input" type="text" id="time0" name="start_time" data-uk-timepicker md-input ng-model="start_time">
+                                </div>
+                            </div>
+                            <div class="uk-grid">
+                               <div class="uk-width-medium-1-3 parsley-row">
+                                    <label for="wizard_birth">End Date<span class="req">*</span></label>
+                                    <input type="text" name="end_date" id="wizard_birth" required class="md-input" data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (MM.DD.YYYY)" data-uk-datepicker="{format:'YYYY-MM-DD'}" md-input ng-model="end_date"/>
+                                </div>
+                                <div class="uk-width-medium-1-3 parsley-row">
+                                    <label for="wizard_birth_place">End Time<span class="req">*</span></label>
+                                    <input class="md-input" type="text" id="time0" name="end_time" data-uk-timepicker md-input ng-model="end_time">
+                                </div>
+                            </div>
+                             <div class="uk-grid">
+                        <div class="uk-width-1-1">
+                            <div class="parsley-row">
+                               
+                                 <textarea id="subject" name ="subject" required ui-tinymce="tinymce_options" ng-model="tinymce_content" cols="30" rows="24"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                            <div class="uk-clearfix uk-margin-large-top">
+                                <button class="md-btn md-btn-primary uk-float-right" type="button" wz-next>Continue</button>
+                            </div>
+                        </wz-step>
+                        <wz-step title="Gallery" template="app/templates/wizard.step.tpl.html">
+                            <h2 class="heading_a">
+                                Gallery
+                                <span class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                            </h2>
+                            <hr class="md-hr"/>
+                            <div class="uk-grid">
+                            <div id="file_upload-drop" class="uk-file-upload">
+                            <p class="uk-text">Drop image to upload</p>
+                            <p class="uk-text-muted uk-text-small uk-margin-small-bottom">or</p>
+                            <span class="uk-form-file md-btn">Choisir une image
+                 <input 
+                        id ="file"
+                type="file" 
+                ngf-select 
+                ng-model="create.file" 
+                name="file" 
+                ngf-pattern="'image/*'"
+                accept="image/*" 
+                ngf-max-size="4MB" 
+                ngf-multiple="true"
+                />
+                
+                                </span>
+                        </div>
+                            </div>
+                            <div class="uk-clearfix uk-margin-large-top">
+                             <button class="md-btn md-btn-primary uk-float-right"  wz-next>Continue</button>
+                            </div>
+                        </wz-step>
+                        <wz-step title="Quiz" template="app/templates/wizard.step.tpl.html">
+                            <h2 class="heading_a">
+                
+                                Quiz                 
+                                
+                
+                
+             
+                           </h2>
+                            <hr class="md-hr"/>
+                            
+                          
+                        
+                  
+>                 
+                          
+                            <div class="uk-clearfix uk-margin-large-top">
+                                <button class="md-btn md-btn-flat md-btn-flat-primary uk-float-left"  wz-previous>Back</button>
+                                <button class="md-btn md-btn-primary uk-float-right" id="submit" type="submit" wz-next>Submit</button>
+                            </div>
+                            
+                        </wz-step>
+                    </wizard>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+ 
